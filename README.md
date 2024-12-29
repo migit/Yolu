@@ -6,5 +6,7 @@
 <p>It wonders around the house, makes some noises , show some moods and attitudes.</p>
 <p>My A2R3 project has evolved so much and I am building it in parts (<a href="https://www.hackster.io/mikroller/ai-autonomous-room-rover-robot-a2r3-part-1-ddfe6b"> A2R3-1</a>,<a href="https://www.hackster.io/mikroller/ai-autonomous-room-rover-robot-a2r3-part-2-48f5a5"> A2R3-2</a>, A2R3-3 coming soon...). 
  Each part has been a learning experience as well as a fun one.</p>
+ ![Screenshot_20241216_194153](https://github.com/user-attachments/assets/970f7a74-abc9-4de8-be70-51d6e5fb81b8)
+
 </div>
-![CAD design Yolu](https://github.com/user-attachments/assets/9ab56257-fc32-45b5-bae5-97fb74bd1cca)
+
