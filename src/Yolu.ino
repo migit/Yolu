@@ -107,14 +107,14 @@ void OLED_DisplayStatus() {
 
 void OLED_AnimateText(const String &text, int size = 2) {
     display.clearDisplay();
-    display.setRotation(2); // Flip screen horizontally
+    display.setRotation(2); // Flip screen horizontally because the OLED is fixed on the tail of the robot upside down
     display.setTextSize(size);
     display.setTextColor(WHITE);
     for (int i = 0; i <= text.length(); i++) {
         display.setCursor(0, 32); // Adjusted to fit larger display
         display.println(text.substring(0, i));
         display.display();
-        delay(50); // Faster animation speed
+        delay(50); // animation speed
     }
 }
 
@@ -182,7 +182,7 @@ void handleMood() {
             curiousRoutine();
             break;
         case BORED:
-            OLED_AnimateText("Hmmm...");
+            OLED_AnimateText("Hmmm..."); // just do nothing
             break;
         case EXCITED:
             dynamicZigzag();
@@ -199,7 +199,7 @@ void motorControlTask(void *parameter) {
             stopMotors(); // Stop the motors immediately
             playObstacleTone();
             moveBackward(); // Move back slightly
-            turnRandomDirection(); // Perform a turn
+            turnRandomDirection(); // Perform a turn but randomized
             OLED_AnimateText("Obstacle Avoided!");
         } else if (stuckDetected) {
             OLED_AnimateText("I'm stuck!");
@@ -262,7 +262,7 @@ void setup() {
     display.display();
 
     if (!sensor.init()) {
-        OLED_AnimateText("VL53L0X Error");
+        OLED_AnimateText("VL53L0X Error"); // display error when sensor failed then resstart the ESP
         delay(5000);
         ESP.restart();
     }
@@ -287,5 +287,5 @@ void setup() {
 // Loop Function
 void loop() {
     // FreeRTOS handles tasks; no need for code in loop()
-    vTaskDelay(portMAX_DELAY);
+    vTaskDelay(portMAX_DELAY); // This sets the RTOS task execution to block for a while then other things can execute
 }
