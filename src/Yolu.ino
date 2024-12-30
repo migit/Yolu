@@ -21,7 +21,7 @@
 
 // OLED Display Settings
 #define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64 // Updated for larger screen
+#define SCREEN_HEIGHT 64 
 
 // Motor & Sensor Settings
 #define HIGH_SPEED 100
@@ -63,7 +63,7 @@ VL53L0X sensor;
 // Semaphore for motor synchronization
 SemaphoreHandle_t motorMutex;
 
-// Function to select the TCA9548A channel
+// Function to select the TCA9548A multiplexer channel
 void tca9548aSelect(uint8_t channel) {
     if (channel > 7) return;
     Wire.beginTransmission(TCA9548A_ADDR);
